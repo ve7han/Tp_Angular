@@ -1,0 +1,27 @@
+<div class="container">
+  <table class="table table-bordered">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Service</th>
+      <th width="220px">Action</th>
+    </tr>
+    <tr *ngFor="let employe of employes">
+      <td>{{ employe.id }}</td>
+      <td>{{ employe.name }}</td>
+      <td>{{ employe.salary }}</td>
+      <td>{{ employe.service }}</td>
+      <td>
+        <a href="#" [routerLink]="['/employe/', employe.id, 'view']" class="btn btn-info m-2">View</a>
+        <a href="#" [routerLink]="['/employe/', employe.id, 'edit']" class="btn btn-primary m-2 ">Edit</a>
+        <button type="button" (click)="deletePost(employe.id)" class="btn btn-danger m-2 ">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<style>
+  .btn btn-info{
+    background-color: blue ;
+  }
+</style>
